@@ -8,21 +8,44 @@ import WatchIcon from '@mui/icons-material/Watch';
 import CakeIcon from '@mui/icons-material/Cake';
 
 
-const PopularCategories = [
+const Popular_Categories = [
     {
         title:'PopularCategories',
-        Icons: [{
-            computer:ComputerIcon,
-            phone: PhoneAndroidIcon,
-            game: SportsEsportsIcon,
-            bice: TwoWheelerIcon,
-            camera: PhotoCameraIcon,
-            Headset:HeadsetIcon,
-            watch:WatchIcon,
-            cake:CakeIcon,
-        }]
-
+        icons: [
+            {
+                id:1,
+                icon: 'ComputerIcon'
+            },
+            {
+                id:2,
+                icon: 'PhoneAndroidIcon'
+            },
+            {
+                id:3,
+                icon: 'SportsEsportsIcon'
+            },
+            {
+                id:4,
+                icon: 'TwoWheelerIcon'
+            },
+            {
+                id:5,
+                icon: 'PhotoCameraIcon'
+            },
+            {
+                id:6,
+                icon: 'HeadsetIcon'
+            },
+            {
+                id:7,
+                icon: 'WatchIcon'
+            },
+            {
+                id:8,
+                icon: 'CakeIcon'
+            },
+        ]
     }
 ]
 
-export default PopularCategories;
+export default Popular_Categories;
