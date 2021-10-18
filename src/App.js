@@ -8,11 +8,10 @@ const App = () => {
             <GlobalStyle />
             {
                 Shop_Data.map(({id,title,path,items}) => (
-                    items.map(({ name }) => (
-                        <h1>{name}</h1>
-                    ))
+                    <h1>{title}</h1>
                 ))
             }
+            <img src="https://dynamic.brandcrowd.com/preview/logodraft/348737be-e49b-4d53-ae50-500091b33e38/image/large.png" alt="logo" />
         </>
     )
 }
