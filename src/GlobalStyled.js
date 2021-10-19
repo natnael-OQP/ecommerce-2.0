@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         border: none;
         box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
     }
     html,body{
         overflow-x: hidden;
