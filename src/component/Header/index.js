@@ -8,6 +8,7 @@ export const HeaderContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding:0 15px;
+    border-bottom: 1.3px solid #303B46;
 `;
 
 export const Logo = styled.img`
