@@ -1,12 +1,12 @@
 import React from 'react'
 import GlobalStyle from './GlobalStyled'
-import Shop_Data from './Data/Shop.Data'
+import HomePage from './pages/HomePage'
 
 const App = () => {
     return (
         <>
             <GlobalStyle />
-            
+            <HomePage/>
         </>
     )
 }
