@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import Sidebar from '../Sidebar/Sidebar'
-import MainBody from '../MainBody/MainBody'
+import Sidebar from '../Sidebar/Sidebar';
+import Hero from '../Hero/Hero';
 export const HeroContainer = styled.div`
     display: flex;
     width: 100%;
@@ -14,7 +14,7 @@ const Banner = () => {
     return (
         <HeroContainer>
             <Sidebar />
-            <MainBody/>
+            <Hero/>
         </HeroContainer>
     )
 }
