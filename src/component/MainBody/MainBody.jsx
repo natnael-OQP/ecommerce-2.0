@@ -1,19 +1,30 @@
 import React from 'react';
-import {
-    Computer, FireExtinguisher,
-} from '@mui/icons-material';
+import styled from 'styled-components';
 
-import {
-    MainWrapper
-} from '.'
 import CategoryPreview from '../CategoryPreview/CategoryPreview'
+import Shop_Data from '../../Data/Shop.Data';
+import { Computer } from '@mui/icons-material';
+
+export const MainWrapper = styled.div`
+    flex:1;
+    padding:.5rem 0 1.5rem 1rem;
+    background-color: #ECEBEF;
+    overflow-y: scroll;
+    ::-webkit-scrollbar{
+        display: none;
+        scroll-behavior: smooth;
+    }
+`;
 
 const MainBody = () => {
     return (
         <MainWrapper>
             <CategoryPreview title="Popular Category" TitleIcon={Computer} IsIcon />
-            <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
-            <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
+            {
+                Shop_Data.map(({id,title,path,TitleIcon,items}) => (
+                    <CategoryPreview key={id} title={title} TitleIcon={TitleIcon} items={items} path={path}   />
+                ))
+            }
         </MainWrapper>
     )
 }
