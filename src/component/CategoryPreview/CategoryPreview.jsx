@@ -9,7 +9,7 @@ import Cart from '../Cart/Cart';
 import IconCategory from '../IconCategory/IconCategory';
 
 
-const CategoryPreview = ({title,TitleIcon,IsIcon}) => {
+const CategoryPreview = ({title,path,TitleIcon,items,IsIcon}) => {
     return (
         <CategoryWrapper>
             <Flex>
@@ -21,12 +21,10 @@ const CategoryPreview = ({title,TitleIcon,IsIcon}) => {
                     IsIcon ? (
                         <IconCategory/>
                     ) : (
-                        Shop_Data.map(({ title, items }) => (
-                            items.map(({ name }) => (
-                                <Cart image={name} />
+                            items.map((item) => (
+                                <Cart path={path} {...item} />
                             ))
-                        ))
-                    )
+                        )
                 }
             </Flex>
             
