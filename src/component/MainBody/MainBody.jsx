@@ -14,7 +14,6 @@ const MainBody = () => {
             <CategoryPreview title="Popular Category" TitleIcon={Computer} IsIcon />
             <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
             <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
-            <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
         </MainWrapper>
     )
 }

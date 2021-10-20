@@ -1,24 +1,30 @@
-import { StarTwoTone } from '@mui/icons-material'
+import { StarRateTwoTone, StarTwoTone } from '@mui/icons-material'
 import React from 'react'
-import { CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Price,RateAndReview } from '.'
+import { Birr, Brand, CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Name, OldPrice, Price,PriceContainer,Rate,RateAndReview, Review } from '.'
 
-const Cart = ({title,image}) => {
+const Cart = ({image,name,brand,rate,reviews,price,oldPrice,detail}) => {
     return (
         <CartContainer>
             <CartWrapper>
                 <ImageContainer>
-                    <Image  />
+                    <Image src={image} />
                 </ImageContainer>
                 <CartInfo>
+                    <Name>Apple Iphone i12</Name>
+                    <Brand>Apple</Brand>
                     <RateAndReview>
-                        <h3>{image}</h3>
-                        <StarTwoTone />
-                        <h5>4.5</h5>
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <Rate>4.5</Rate>
+                        <Review>9 345 reviews</Review>
                     </RateAndReview>
-                    <Price>
-                        <h5>4500</h5>
-                        <delete>6000</delete>
-                    </Price>
+                    <PriceContainer>
+                        <Price>24,540<Birr>ብር</Birr></Price>
+                        <OldPrice> 24,000<small>ብር</small></OldPrice>
+                    </PriceContainer>
                 </CartInfo>
             </CartWrapper>
         </CartContainer>
