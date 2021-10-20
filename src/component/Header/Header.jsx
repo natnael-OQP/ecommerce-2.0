@@ -8,7 +8,7 @@ import {
     CategoryButton,
     HeaderContainer, HederIconsContainer, Input, Logo, SearchContainer, SearchIconContainer, SearchIcons
 } from '.'
-import logo from  '../../logo-white.png'
+import logo from  '../../images/logo-white.png'
 const Header = () => {
     const history = useHistory();
     return (
