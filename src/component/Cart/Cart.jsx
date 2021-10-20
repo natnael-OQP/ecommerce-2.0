@@ -1,11 +1,13 @@
 import {StarTwoTone } from '@mui/icons-material'
 import React from 'react'
+import { useHistory } from 'react-router'
 import { Birr, Brand, CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Name, OldPrice, Price,PriceContainer,Rate,RateAndReview, Review } from '.'
 
-const Cart = ({image,name,brand,rate,reviews,price,oldPrice,detail}) => {
+const Cart = ({ image, name, brand, rate, reviews, price, oldPrice, detail }) => {
+    const history = useHistory();
     return (
         <CartContainer>
-            <CartWrapper>
+            <CartWrapper onClick={()=>history.push('/detail')} >
                 <ImageContainer>
                     <Image src={image} />
                 </ImageContainer>
