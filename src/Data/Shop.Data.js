@@ -1,10 +1,12 @@
-
+import { Computer,PhoneAndroid,SportsEsports,TwoWheeler,PhotoCamera,Headset,Watch,Cake, } from "@mui/icons-material";
+// import {Jacket}
 const Shop_Data = [
-    // recommended
+    // recommended-id-1
     {
       id: 1,
       title: 'Recommended',
       Path: 'recommended',
+      TitleIcon:Computer,
       items: [
         {
           id: 1,
@@ -107,14 +109,15 @@ const Shop_Data = [
         }
       ]
     },
-    // recommended
+    // watch-id-2
     {
       id: 2,
       title: 'Watch',
       Path: 'watch',
+      TitleIcon:Watch,
       items: [
         {
-          id: 1,
+          id: 11,
           name: 'FOSSL ',
           brand:'fossl',
           rate:'4.1',
@@ -125,7 +128,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 2,
+          id: 12,
           name: 'RoadSter',
           brand:'RoadSter',
           rate:'4.8',
@@ -136,7 +139,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 3,
+          id: 13,
           name: 'FOSSL Max ',
           brand:'fossl',
           rate:'4.1',
@@ -147,7 +150,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 4,
+          id: 14,
           name: 'Geneva LED',
           brand:'geneva',
           rate:'4.5',
@@ -158,7 +161,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 5,
+          id: 15,
           name: 'binbond top luxery',
           brand:'binbond',
           rate:'3.5',
@@ -169,7 +172,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 6,
+          id: 16,
           name: 'Geneva LED',
           brand:'geneva',
           rate:'4.5',
@@ -180,7 +183,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 7,
+          id: 17,
           name: 'FOSSL ',
           brand:'fossl',
           rate:'4.5',
@@ -191,7 +194,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 8,
+          id: 18,
           name: 'QASA  Blender',
           brand:'QASA',
           rate:'4.5',
@@ -202,7 +205,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 9,
+          id: 19,
           name: 'Elegant fashion',
           brand:'Rolle',
           rate:'4.9',
@@ -214,14 +217,15 @@ const Shop_Data = [
         }
       ]
     },
-    // hats
+    // hats-id-3
     {
       id: 3,
       title: 'Hats',
       Path: 'hats',
+      TitleIcon:Cake,
       items: [
         {
-          id: 1,
+          id: 21,
           name: 'Brown Brim',
           brand:'adidas',
           rate:'4.5',
@@ -232,7 +236,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 2,
+          id: 22,
           name: 'Blue Beanie',
           brand:'adidas',
           rate:'4.5',
@@ -243,7 +247,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 3,
+          id: 23,
           name: 'Brown Cowboy',
           brand:'adidas',
           rate:'4.5',
@@ -254,7 +258,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 4,
+          id: 24,
           name: 'Grey Brim',
           brand:'adidas',
           rate:'4.5',
@@ -265,7 +269,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 5,
+          id: 25,
           name: 'Green Beanie',
           brand:'adidas',
           rate:'4.5',
@@ -276,7 +280,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 6,
+          id: 26,
           name: 'Palm Tree Cap',
           brand:'adidas',
           rate:'4.5',
@@ -287,7 +291,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 7,
+          id: 27,
           name: 'Red Beanie',
           brand:'adidas',
           rate:'4.5',
@@ -298,7 +302,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 8,
+          id: 28,
           name: 'Wolf Cap',
           brand:'adidas',
           rate:'4.5',
@@ -309,7 +313,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 9,
+          id: 29,
           name: 'Blue Snapback',
           brand:'adidas',
           rate:'4.5',
@@ -321,14 +325,15 @@ const Shop_Data = [
         }
       ]
     },
-    // -- Sneakers
+    // -- Sneakers-id-4
     {
-      id: 2,
+      id: 4,
       title: 'Sneakers',
       Path: 'sneakers',
+      TitleIcon:SportsEsports,
       items: [
         {
-          id: 10,
+          id: 30,
           name: 'Adidas NMD',
           brand:'adidas',
           rate:'4.5',
@@ -339,7 +344,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 11,
+          id: 31,
           name: 'Adidas Yeezy',
           brand:'adidas',
           rate:'4.5',
@@ -350,7 +355,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 12,
+          id: 32,
           name: 'Black Converse',
           brand:'adidas',
           rate:'4.5',
@@ -361,7 +366,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 13,
+          id: 33,
           name: 'Nike White AirForce',
           brand:'adidas',
           rate:'4.5',
@@ -372,7 +377,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 14,
+          id: 34,
           name: 'Nike Red High Tops',
           brand:'adidas',
           rate:'4.5',
@@ -383,7 +388,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 15,
+          id: 35,
           name: 'Nike Brown High Tops',
           brand:'adidas',
           rate:'4.5',
@@ -394,7 +399,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 16,
+          id: 36,
           name: 'Air Jordan Limited',
           brand:'adidas',
           rate:'4.5',
@@ -405,7 +410,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 17,
+          id: 37,
           name: 'Timberlands',
           brand:'adidas',
           rate:'4.5',
@@ -417,14 +422,15 @@ const Shop_Data = [
         }
       ]
     },
-    // --Jackets
+    // --Jackets-id-5
     {
-      id: 3,
+      id: 5,
       title: 'Jackets',
       Path: 'jackets',
+      TitleIcon:TwoWheeler,
       items: [
         {
-          id: 18,
+          id: 58,
           name: 'Black Jean Shearling',
           brand:'adidas',
           rate:'4.5',
@@ -435,7 +441,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 19,
+          id: 59,
           name: 'Blue Jean Jacket',
           brand:'adidas',
           rate:'4.5',
@@ -446,7 +452,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 20,
+          id: 50,
           name: 'Grey Jean Jacket',
           brand:'adidas',
           rate:'4.5',
@@ -457,7 +463,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 21,
+          id: 51,
           name: 'Brown Shearling',
           brand:'adidas',
           rate:'4.5',
@@ -468,7 +474,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 22,
+          id: 52,
           name: 'Tan Trench',
           brand:'adidas',
           rate:'4.5',
@@ -479,15 +485,16 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         }
       ]
-  },
-    // women's
+    },
+    // women's-id-6
     {
-      id: 4,
+      id: 6,
       title: 'Womens',
       Path: 'womens',
+      TitleIcon:PhoneAndroid,
       items: [
         {
-          id: 23,
+          id: 63,
           name: 'Blue Tanktop',
           brand:'adidas',
           rate:'4.5',
@@ -498,7 +505,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 24,
+          id: 64,
           name: 'Floral Blouse',
           brand:'adidas',
           rate:'4.5',
@@ -509,7 +516,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 25,
+          id: 65,
           name: 'Floral Dress',
           brand:'adidas',
           rate:'4.5',
@@ -520,7 +527,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 26,
+          id: 66,
           name: 'Red Dots Dress',
           brand:'adidas',
           rate:'4.5',
@@ -531,7 +538,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 27,
+          id: 67,
           name: 'Striped Sweater',
           brand:'adidas',
           rate:'4.5',
@@ -542,7 +549,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 28,
+          id: 68,
           name: 'Yellow Track Suit',
           brand:'adidas',
           rate:'4.5',
@@ -553,7 +560,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 29,
+          id: 69,
           name: 'White Blouse',
           brand:'adidas',
           rate:'4.5',
@@ -564,16 +571,16 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         }
       ]
-  },
-    // mens
-
+    },
+    // mens-id-7
     {
-      id: 5,
+      id: 7,
       title: 'Mens',
       Path: 'mens',
+      TitleIcon:Headset,
       items: [
         {
-          id: 30,
+          id: 70,
           name: 'Camo Down Vest',
           brand:'adidas',
           rate:'4.5',
@@ -584,7 +591,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 31,
+          id: 71,
           name: 'Floral T-shirt',
           brand:'adidas',
           rate:'4.5',
@@ -595,7 +602,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 32,
+          id: 72,
           name: 'Black & White Longsleeve',
           brand:'adidas',
           rate:'4.5',
@@ -606,7 +613,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 33,
+          id: 73,
           name: 'Pink T-shirt',
           brand:'adidas',
           rate:'4.5',
@@ -617,7 +624,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 34,
+          id: 74,
           name: 'Jean Long Sleeve',
           brand:'adidas',
           rate:'4.5',
@@ -628,7 +635,7 @@ const Shop_Data = [
           detail:'lorem jknasn jdsfh sd iueiqe :keoiqw eqpweoi acal; ;aksiwe .nnb uewyr  sd fjdsfh uwery aloie   sndbksdfhi weihsdfia weiuewury  kksfsdjfh weuywe  ',
         },
         {
-          id: 35,
+          id: 75,
           name: 'Burgundy T-shirt',
           brand:'adidas',
           rate:'4.5',
