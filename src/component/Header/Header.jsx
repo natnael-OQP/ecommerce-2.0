@@ -1,6 +1,7 @@
 import { ArrowDownward, FavoriteOutlined, Notifications, Search, ShoppingCart,  } from '@mui/icons-material'
 import { Avatar, IconButton } from '@mui/material'
 import React from 'react'
+import { useHistory } from 'react-router'
 import {
     AddCartCounter,
     CartWrapper,
@@ -9,9 +10,10 @@ import {
 } from '.'
 import logo from  '../../logo-white.png'
 const Header = () => {
+    const history = useHistory();
     return (
         <HeaderContainer>
-            <Logo src={logo} alt="logo" />
+            <Logo src={logo} alt="logo" onClick={()=>history.push('/')} />
             {/* Search-Container--> */}
             <SearchContainer>
                 <Input type="search" placeholder="Search..." />

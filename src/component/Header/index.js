@@ -12,6 +12,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Logo = styled.img`
+    cursor: pointer;
     width:150px;
     height:30px;
     object-fit: contain;

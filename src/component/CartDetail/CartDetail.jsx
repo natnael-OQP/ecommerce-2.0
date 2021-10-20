@@ -16,14 +16,6 @@ const CartDetail = () => {
     return (
         <CartWrapper>
             <h1>DetailSection</h1>
-            <h1>DetailSection</h1>
-            <h1>DetailSection</h1>
-            <h1>DetailSection</h1>
-            <h1>DetailSection</h1>
-            <h1>DetailSection</h1>
-            <h1>DetailSection</h1>
-            
-            <h1>DetailSection</h1>
         </CartWrapper>
     )
 }
