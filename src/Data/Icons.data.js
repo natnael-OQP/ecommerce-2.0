@@ -42,61 +42,6 @@ const Icons_Data = [
         path: 'man',
         Icon:Cake,
     },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    },
-    {
-        id: 8,
-        path: 'man',
-        Icon:Cake,
-    }
 ];
 
 export default Icons_Data;
