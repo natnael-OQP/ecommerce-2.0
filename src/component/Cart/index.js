@@ -47,6 +47,9 @@ export const Name = styled.h4`
     letter-spacing: .03rem;
     user-select: none;
     color:#303B46;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `;
 
 export const Brand = styled.h5`
