@@ -1,12 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {
+    Computer, FireExtinguisher,
+} from '@mui/icons-material';
+
 import {
     MainWrapper
 } from '.'
+import CategoryPreview from '../CategoryPreview/CategoryPreview'
 
 const MainBody = () => {
     return (
         <MainWrapper>
-            <h1>main</h1>
+            <CategoryPreview title="Popular Category" TitleIcon={Computer} IsIcon />
+            <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
+            <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
+            <CategoryPreview title="Popular Category" TitleIcon={FireExtinguisher}  />
         </MainWrapper>
     )
 }
