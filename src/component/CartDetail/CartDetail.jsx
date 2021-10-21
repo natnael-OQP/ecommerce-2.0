@@ -1,5 +1,5 @@
-import React from 'react';
-import {useSelector} from 'react-redux'
+import React, { useState } from 'react';
+import {useDispatch, useSelector} from 'react-redux'
 import { StarTwoTone } from '@mui/icons-material';
 
 import {
@@ -21,16 +21,33 @@ import {
     Wrapper,
 } from '.';
 import { selectCart } from '../../features/cartSlice';
+import { addToBasket } from '../../features/basketSlice';
 
 const CartDetail = () => {
+    const [carts,setCarts] = useState();
+    const dispatch = useDispatch();
     const cart = useSelector(selectCart);
-    const { id, image, name, brand, rate, reviews, price, oldPrice, detail, } = cart;
+    const { id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail, } = cart;
+    
+    const addToBasketClick = () => {
+        dispatch(addToBasket({
+            id,
+            imageUrl,
+            name,
+            brand,
+            rate,
+            reviews,
+            price,
+            oldPrice,
+            detail,
+        }))
+    }
 
     return (
         <CartWrapper>
             <Wrapper>
                 <ImageContainer>
-                    <Image src={image} alt={name} />
+                    <Image src={imageUrl} alt={name} />
                 </ImageContainer>
                 <InfoContainer>
                     <Name>{name}</Name>
@@ -50,8 +67,8 @@ const CartDetail = () => {
                     </PriceContainer>
                     <Detail>{detail}</Detail>
                     <AddToCart
-                        // add to cart 
-                    >Add To Cart </AddToCart>
+                    onClick={addToBasketClick}
+                    >add to Cart </AddToCart>
                 </InfoContainer>
             </Wrapper>
         </CartWrapper>
