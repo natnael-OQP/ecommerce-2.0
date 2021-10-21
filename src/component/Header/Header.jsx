@@ -1,6 +1,7 @@
 import { ArrowDownward, FavoriteOutlined, Notifications, Search, ShoppingCart,  } from '@mui/icons-material'
 import { Avatar, IconButton } from '@mui/material'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import {
     AddCartCounter,
@@ -8,9 +9,12 @@ import {
     CategoryButton,
     HeaderContainer, HederIconsContainer, Input, Logo, SearchContainer, SearchIconContainer, SearchIcons
 } from '.'
-import logo from  '../../images/logo-white.png'
+import { selectBasket } from '../../features/basketSlice'
+import logo from '../../images/logo-white.png';
+
 const Header = () => {
     const history = useHistory();
+    const basket = useSelector(selectBasket)
     return (
         <HeaderContainer>
             <Logo src={logo} alt="logo" onClick={()=>history.push('/')} />
@@ -29,7 +33,7 @@ const Header = () => {
                 </IconButton>
                 <CartWrapper>
                     <ShoppingCart/>
-                    <AddCartCounter>1</AddCartCounter>
+                    <AddCartCounter>{basket?.length}</AddCartCounter>
                 </CartWrapper>
                 <IconButton>
                     <Notifications/>
