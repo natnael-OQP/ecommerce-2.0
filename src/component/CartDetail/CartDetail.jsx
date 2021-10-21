@@ -1,21 +1,50 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from 'react';
+import { StarTwoTone } from '@mui/icons-material';
 
-export const CartWrapper = styled.div`
-    flex:1;
-    padding:.5rem 0 1.5rem 1rem;
-    background-color: #ECEBEF;
-    overflow-y: scroll;
-    ::-webkit-scrollbar{
-        display: none;
-        scroll-behavior: smooth;
-    }
-`;
+import {
+    Birr,
+    Brand,
+    CartWrapper,
+    Detail,
+    Image,
+    ImageContainer,
+    InfoContainer,
+    Name,
+    OldPrice,
+    Price,
+    PriceContainer,
+    Rate,
+    RateAndReview,
+    Review,
+    Wrapper,
+} from '.';
 
-const CartDetail = () => {
+const CartDetail = ({id,detail,}) => {
     return (
         <CartWrapper>
-            <h1>DetailSection</h1>
+            <Wrapper>
+                <ImageContainer>
+                    <Image />
+                </ImageContainer>
+                <InfoContainer>
+                    <Name>apple iphone 12</Name>
+                    <Brand>iphone</Brand>
+                    <RateAndReview>
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <StarTwoTone fontSize="small" />
+                        <Rate>45</Rate>
+                        <Review>2,450 </Review>
+                    </RateAndReview>
+                    <PriceContainer>
+                        <Price>15,000<Birr>ብር</Birr></Price>
+                        <OldPrice>16,500<small>ብር</small></OldPrice>
+                    </PriceContainer>
+                    <Detail>{detail}</Detail>
+                </InfoContainer>
+            </Wrapper>
         </CartWrapper>
     )
 }
