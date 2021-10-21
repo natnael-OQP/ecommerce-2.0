@@ -1,9 +1,9 @@
 import React from 'react'
 import { Click, RowSection, Title,RowWrapper } from '.'
-const SidebarRows = ({Icon,title,isClick}) => {
+const SidebarRows = ({Icon,title,isClick,toggle}) => {
     return (
         <>
-        <RowSection  >
+        <RowSection onClick={toggle} >
             <Click isClick={isClick} />
             <RowWrapper isClick={isClick} >
                 <Icon fontSize="small" isClick={isClick} />

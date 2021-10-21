@@ -15,14 +15,20 @@ export const Row = styled.div`
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    transform:transition all 0.4 ease-in-out;
     display:${({isClick})=>isClick ? "block" : "none" };
 `;
 export const Category = styled.h5`
-    margin-left: 1rem;
+    margin-left: .1rem;
     font-weight:400;
     padding:.3rem .5rem;
     letter-spacing: .03rem;
     user-select: none;
     color: #ECEBEF;
     margin-bottom:.3rem;
+    transition: all 0.4 ease-in-out;
+    &:hover{
+        transition: all 0.5 ease-in-out;
+        transform: scale(1.06);
+    }
 `;
