@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux'
 import { StarTwoTone } from '@mui/icons-material';
 
 import {
@@ -18,29 +19,33 @@ import {
     Review,
     Wrapper,
 } from '.';
+import { selectCart } from '../../features/cartSlice';
 
-const CartDetail = ({id,detail}) => {
+const CartDetail = () => {
+    const cart = useSelector(selectCart);
+    const { id, image, name, brand, rate, reviews, price, oldPrice, detail, } = cart;
+
     return (
         <CartWrapper>
             <Wrapper>
                 <ImageContainer>
-                    <Image />
+                    <Image src={image} alt={name} />
                 </ImageContainer>
                 <InfoContainer>
-                    <Name>apple iphone 12</Name>
-                    <Brand>iphone</Brand>
+                    <Name>{name}</Name>
+                    <Brand>{brand}</Brand>
                     <RateAndReview>
                         <StarTwoTone fontSize="small" />
                         <StarTwoTone fontSize="small" />
                         <StarTwoTone fontSize="small" />
                         <StarTwoTone fontSize="small" />
                         <StarTwoTone fontSize="small" />
-                        <Rate>45</Rate>
-                        <Review>2,450 </Review>
+                        <Rate>{rate}</Rate>
+                        <Review>{reviews} </Review>
                     </RateAndReview>
                     <PriceContainer>
-                        <Price>15,000<Birr>ብር</Birr></Price>
-                        <OldPrice>16,500<small>ብር</small></OldPrice>
+                        <Price>{price}<Birr>ብር</Birr></Price>
+                        <OldPrice>{oldPrice}<small>ብር</small></OldPrice>
                     </PriceContainer>
                     <Detail>{detail}</Detail>
                 </InfoContainer>
