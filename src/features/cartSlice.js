@@ -8,12 +8,12 @@ export const cartSlice = createSlice({
     },
     reducers: {
         cartInfo: (state, action) => {
-        state.cartInfo += action.payload;
+        state.cartInfo =  action.payload;
         },
     }
 });
 
-export const { increment, decrement } = cartSlice.actions;
+export const { cartInfo } = cartSlice.actions;
 
 export const selectCart = (state) => state.cart.cartInfo;
 
