@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux'
 import { StarTwoTone } from '@mui/icons-material';
 
 import {
+    AddToCart,
     Birr,
     Brand,
     CartWrapper,
@@ -48,6 +49,9 @@ const CartDetail = () => {
                         <OldPrice>{oldPrice}<small>ብር</small></OldPrice>
                     </PriceContainer>
                     <Detail>{detail}</Detail>
+                    <AddToCart
+                        // add to cart 
+                    >Add To Cart </AddToCart>
                 </InfoContainer>
             </Wrapper>
         </CartWrapper>

@@ -124,3 +124,17 @@ export const Detail = styled.p`
     user-select: none;
     word-wrap: break-word;
 `;
+
+export const AddToCart = styled.button`
+    cursor: pointer;
+    ${Flexy};
+    justify-content:center;
+    width:100%;
+    height:40px;
+    margin-top:1.2rem;
+    background-color: #FF9901;
+    color:#F8FAFB;
+    font-weight: bold;
+    border-radius:3px;
+    font-size: 1.1rem;
+`;
