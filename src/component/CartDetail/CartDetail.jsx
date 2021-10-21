@@ -19,7 +19,7 @@ import {
     Wrapper,
 } from '.';
 
-const CartDetail = ({id,detail,}) => {
+const CartDetail = ({id,detail}) => {
     return (
         <CartWrapper>
             <Wrapper>
