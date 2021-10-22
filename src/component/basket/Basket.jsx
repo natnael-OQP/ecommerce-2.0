@@ -1,7 +1,22 @@
+import { StarTwoTone } from '@mui/icons-material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import {
-    BasketContainer, BasketWrapper, CartInfo, Image
+    BasketContainer,
+    BasketWrapper,
+    Brand,
+    CartInfo,
+    AddToCart,
+    Birr,
+    Detail,
+    Image,
+    Name,
+    OldPrice,
+    Price,
+    PriceContainer,
+    Rate,
+    RateAndReview,
+    Review,
 } from '.'
 import { selectItems } from '../../features/basketSlice'
 
@@ -17,9 +32,25 @@ const Basket = () => {
             ) : (
                 <BasketWrapper>
                     <Image />
-                        <CartInfo>
-                            
-                    </CartInfo>
+                    <CartInfo>
+                        <Name>name</Name>
+                        <Brand>brand</Brand>
+                        <RateAndReview>
+                            <StarTwoTone fontSize="small" />
+                            <StarTwoTone fontSize="small" />
+                            <StarTwoTone fontSize="small" />
+                            <StarTwoTone fontSize="small" />
+                            <StarTwoTone fontSize="small" />
+                            <Rate>rate</Rate>
+                            <Review>reviews </Review>
+                        </RateAndReview>
+                        <PriceContainer>
+                            <Price>price<Birr>ብር</Birr></Price>
+                            <OldPrice>oldPrice<small>ብር</small></OldPrice>
+                        </PriceContainer>
+                        <Detail>detail</Detail>
+                        </CartInfo>
+                        <AddToCart>Remove to Basket</AddToCart>
                 </BasketWrapper>
             )}
         </BasketContainer>

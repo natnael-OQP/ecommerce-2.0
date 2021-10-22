@@ -12,8 +12,8 @@ export const CartWrapper = styled.div`
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    width:145px;
-    height:207px;
+    width:150px;
+    height:330px;
     /* border: 1px solid #060608; */
     margin-right: 1rem;
     overflow: hidden;
@@ -30,7 +30,7 @@ export const ImageContainer = styled.div`
 export const Image = styled.img`
     width: 100%;
     height:100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 10px;
 
 `;
