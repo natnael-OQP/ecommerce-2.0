@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router';
 import styled from 'styled-components';
+import Basket from '../basket/Basket';
 import CartDetail from '../CartDetail/CartDetail';
 import MainBody from '../HomeCartList/MainBody';
 
@@ -19,11 +20,14 @@ const Hero = () => {
     return (
         <HeroWrapper>
             <Switch>
+                <Route exact path="/">
+                    <MainBody />
+                </Route>
                 <Route path="/detail" >
                     <CartDetail/>
                 </Route>
-                <Route exact path="/">
-                    <MainBody />
+                <Route path="/basket" >
+                    <Basket/>
                 </Route>
             </Switch>
         </HeroWrapper>

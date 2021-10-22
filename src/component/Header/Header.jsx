@@ -7,14 +7,15 @@ import {
     AddCartCounter,
     CartWrapper,
     CategoryButton,
-    HeaderContainer, HederIconsContainer, Input, Logo, SearchContainer, SearchIconContainer, SearchIcons
+    HeaderContainer, HederIconsContainer, Input, Logo, SearchContainer, SearchIconContainer,
 } from '.'
-import { selectBasket } from '../../features/basketSlice'
+
+import { selectItems } from '../../features/basketSlice'
 import logo from '../../images/logo-white.png';
 
 const Header = () => {
     const history = useHistory();
-    const basket = useSelector(selectBasket)
+    const basket = useSelector(selectItems)
     return (
         <HeaderContainer>
             <Logo src={logo} alt="logo" onClick={()=>history.push('/')} />
@@ -31,7 +32,7 @@ const Header = () => {
                 <IconButton>
                     <FavoriteOutlined/>
                 </IconButton>
-                <CartWrapper>
+                <CartWrapper onClick={()=>history.push('/basket')} >
                     <ShoppingCart/>
                     <AddCartCounter>{basket?.length}</AddCartCounter>
                 </CartWrapper>
