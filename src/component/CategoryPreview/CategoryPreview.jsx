@@ -14,9 +14,7 @@ const CategoryPreview = ({title,path,TitleIcon,items,IsIcon}) => {
         <CategoryWrapper>
             <Flex>
                 <Title>{title}</Title>
-                <IconSpan>
-                    <TitleIcon fontSize="medium" />
-                </IconSpan>
+                <TitleIcon fontSize="medium" />
             </Flex>
             <Flex>
                 {
