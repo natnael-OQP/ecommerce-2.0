@@ -14,9 +14,13 @@ export const BasketContainer = styled.div`
     padding:.5rem 0 1.5rem 1rem;
     background-color: #ECEBEF;
     overflow-y: scroll;
+    position: relative;
     ::-webkit-scrollbar{
         display: none;
         scroll-behavior: smooth;
+    }
+    .css-i4bv87-MuiSvgIcon-root{
+        cursor: pointer;
     }
 `;
 

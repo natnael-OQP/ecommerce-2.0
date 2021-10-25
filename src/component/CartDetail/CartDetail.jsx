@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import { StarTwoTone } from '@mui/icons-material';
+import { ArrowBack, StarRate } from '@mui/icons-material';
 
 import {
     AddToCart,
@@ -22,12 +22,13 @@ import {
 } from '.';
 import { selectCart } from '../../features/cartSlice';
 import { addToBasket } from '../../features/basketSlice';
+import { useHistory } from 'react-router';
 
 const CartDetail = () => {
-    const [carts,setCarts] = useState();
     const dispatch = useDispatch();
     const cart = useSelector(selectCart);
     const { id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail, } = cart;
+    const history = useHistory();
     
     const addToBasketClick = () => {
         dispatch(addToBasket({
@@ -41,10 +42,11 @@ const CartDetail = () => {
             oldPrice,
             detail,
         }))
+        history.push('/basket')
     }
-
     return (
         <CartWrapper>
+        <ArrowBack fontSize="medium" onClick={()=>history.push('/')} />
             <Wrapper>
                 <ImageContainer>
                     <Image src={imageUrl} alt={name} />
@@ -53,11 +55,11 @@ const CartDetail = () => {
                     <Name>{name}</Name>
                     <Brand>{brand}</Brand>
                     <RateAndReview>
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
                         <Rate>{rate}</Rate>
                         <Review>{reviews} </Review>
                     </RateAndReview>

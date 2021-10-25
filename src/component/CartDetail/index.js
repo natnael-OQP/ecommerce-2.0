@@ -17,6 +17,9 @@ export const CartWrapper = styled.div`
         display: none;
         scroll-behavior: smooth;
     }
+    .css-i4bv87-MuiSvgIcon-root{
+        cursor: pointer;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -30,16 +33,16 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-    width:210px;;
-    height:200px;
-    border: 1px solid #060608;
+    width:220px;;
+    height:230px;
     margin-right:2rem;
+    background-color: #fff;
 `;
 
 export const Image = styled.img`
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 `;
 
 export const InfoContainer = styled.div`
@@ -50,7 +53,7 @@ export const InfoContainer = styled.div`
 
 
 export const Name = styled.h4`
-    margin-top:.2rem;
+    /* margin-top:.2rem; */
     font-weight:bold;
     letter-spacing: .03rem;
     user-select: none;
@@ -65,7 +68,7 @@ export const Brand = styled.h5`
     letter-spacing: .03rem;
     user-select: none;
     color:#218394;
-    margin:.2rem 0;
+    /* margin:.2rem 0; */
 `;
 export const RateAndReview = styled.div`
     ${Flexy};
@@ -89,9 +92,8 @@ export const Review = styled.small`
 `;
 
 export const PriceContainer = styled.div`
-    display:flex;
+    ${Flexy};
     position:relative;
-    margin-top: .2rem;
 `;
 
 export const Price = styled.h3`
@@ -107,9 +109,9 @@ export const Birr = styled.small`
     right:.1rem;
 `;
 export const OldPrice = styled.h5`
-    position: absolute;
-    right:.1rem;
-    bottom:0;
+    text-decoration: line-through;
+    margin-top: .2rem;
+    margin-left:.3rem;
     color:lightgray;
     font-weight:400;
     letter-spacing: .03rem;
@@ -117,8 +119,8 @@ export const OldPrice = styled.h5`
     
 `;
 
-export const Detail = styled.p`
-    margin-top: 1rem;
+export const Detail = styled.h5`
+    margin-top: .7rem;
     font-weight:400;
     color:gray;
     letter-spacing: .03rem;
@@ -138,4 +140,5 @@ export const AddToCart = styled.button`
     font-weight: bold;
     border-radius:3px;
     font-size: 1.1rem;
+    text-transform: capitalize;
 `;

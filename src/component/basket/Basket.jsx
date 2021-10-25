@@ -1,6 +1,7 @@
-import { StarTwoTone } from '@mui/icons-material'
+import { ArrowBack, StarTwoTone } from '@mui/icons-material'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import {
     BasketContainer,
     BasketWrapper,
@@ -22,11 +23,12 @@ import { selectItems } from '../../features/basketSlice'
 
 
 const Basket = () => {
-    
+    const history = useHistory();
     const Items = useSelector(selectItems)
 
     return (
         <BasketContainer>
+            <ArrowBack fontSize="medium" onClick={()=>history.push('/')} />
             {Items.length === 0 ? (
                 <h1>Your basket is empty</h1>
             ) : (
