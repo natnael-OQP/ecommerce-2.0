@@ -13,24 +13,24 @@ export const CartWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width:150px;
-    height:330px;
-    /* border: 1px solid #060608; */
+    height:310px;
     margin-right: 1rem;
     overflow: hidden;
 `;
 
 export const ImageContainer = styled.div`
     width: 100%;
-    height:68%;
+    height:190px;
     border-radius: 12px;
     background-color: #fff;
-    margin-bottom:.5rem;    
+    margin-bottom:.5rem;
+    padding:.5rem;  
 `;
 
 export const Image = styled.img`
     width: 100%;
     height:100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
 
 `;
@@ -106,5 +106,5 @@ export const OldPrice = styled.h5`
     font-weight:400;
     letter-spacing: .03rem;
     user-select: none;
-    
+    text-decoration:line-through;
 `;

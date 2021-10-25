@@ -3,8 +3,8 @@ import {
     CategoryWrapper,
     Title,
     Flex,
-} from '.'
-import Shop_Data from '../../Data/Shop.Data';
+    IconSpan,
+} from '.';
 import Cart from '../Cart/Cart';
 import IconCategory from '../IconCategory/IconCategory';
 
@@ -14,7 +14,9 @@ const CategoryPreview = ({title,path,TitleIcon,items,IsIcon}) => {
         <CategoryWrapper>
             <Flex>
                 <Title>{title}</Title>
-                <TitleIcon fontSize="medium" />
+                <IconSpan>
+                    <TitleIcon fontSize="medium" />
+                </IconSpan>
             </Flex>
             <Flex>
                 {

@@ -1,5 +1,5 @@
-import {StarTwoTone } from '@mui/icons-material'
 import React from 'react'
+import {StarRate, } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
 import { Birr, Brand, CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Name, OldPrice, Price,PriceContainer,Rate,RateAndReview, Review } from '.'
@@ -33,11 +33,11 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
                     <Name>{name}</Name>
                     <Brand>{brand}</Brand>
                     <RateAndReview>
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
-                        <StarTwoTone fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
+                        <StarRate fontSize="small" />
                         <Rate>{rate}</Rate>
                         <Review>{reviews}</Review>
                     </RateAndReview>
