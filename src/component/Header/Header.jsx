@@ -1,6 +1,7 @@
-import { ArrowDownward, FavoriteOutlined, Notifications, Search, ShoppingCart,  } from '@mui/icons-material'
-import { Avatar, IconButton } from '@mui/material'
 import React from 'react'
+import {  FavoriteOutlined, KeyboardArrowDownSharp,  NotificationsNoneOutlined, Search, ShoppingCart, } from '@mui/icons-material';
+
+import { Avatar, IconButton } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import {
@@ -22,7 +23,7 @@ const Header = () => {
             {/* Search-Container--> */}
             <SearchContainer>
                 <Input type="search" placeholder="Search..." />
-                <CategoryButton>All Category <ArrowDownward fontSize="small" /> </CategoryButton>
+                <CategoryButton>All Category <KeyboardArrowDownSharp fontSize="small" /> </CategoryButton>
                 <SearchIconContainer>
                     <Search />
                 </SearchIconContainer>
@@ -37,7 +38,7 @@ const Header = () => {
                     <AddCartCounter>{basket?.length}</AddCartCounter>
                 </CartWrapper>
                 <IconButton>
-                    <Notifications/>
+                    <NotificationsNoneOutlined />
                 </IconButton>
                 <IconButton>
                     <Avatar />

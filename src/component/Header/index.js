@@ -9,6 +9,9 @@ export const HeaderContainer = styled.div`
     justify-content: space-between;
     padding:0 15px;
     border-bottom: 1.3px solid #303B46;
+    .MuiSvgIcon-root{
+        color:#fff;
+    }
 `;
 
 export const Logo = styled.img`
@@ -24,7 +27,7 @@ export const SearchContainer = styled.div`
     display: flex;
     align-items: center;
     height:33px;
-    max-width:450px;
+    max-width:460px;
     border:1px solid #303B46;
     border-radius: 5px;
 `;
@@ -37,11 +40,12 @@ export const Input = styled.input`
     border-top-left-radius:5px;
     border-bottom-left-radius:5px;
     background-color: #212D3C;
+    color:#ECEBEF;
     `;
 
 export const CategoryButton = styled.button`
     background-color: #212D3C;
-    width:150px;
+    width:170px;
     height:100%;
     display: flex;
     align-items: center;
@@ -53,6 +57,7 @@ export const CategoryButton = styled.button`
     font-weight:400;
     letter-spacing: .03rem;
     cursor: pointer;
+    color:#ECEBEF;
 `;
 
 export const SearchIconContainer = styled.button`
@@ -90,8 +95,8 @@ export const CartWrapper = styled.div`
     display: flex;
     align-items:center;
     justify-content: center;
-    width:30px;
-    height:30px;
+    width:32px;
+    height:32px;
     border-radius: 5px;
     background-color: #FF9901 ;
     cursor: pointer;
@@ -102,17 +107,18 @@ export const CartWrapper = styled.div`
 `;
 
 export const AddCartCounter = styled.small`
-    background-color: #ECEBEF ;
-    height:14px;
-    width:14px;
-    border-radius: 50%;
+    background-color: #fff ;
+    height:17px;
+    width:17px;
+    border-radius: 7px;
     color:#060608;
     position:absolute;
-    top:-7px;
-    right: -5px;
+    top:-9px;
+    right: -7px;
     display:flex;
     align-items:center;
     justify-content:center;
     user-select: none;
-    font-weight:400;
+    font-weight:600;
+    font-size:12px;
 `;
