@@ -5,21 +5,16 @@ import { useHistory } from 'react-router'
 import {
     BasketContainer,
     BasketWrapper,
-    Brand,
-    CartInfo,
-    AddToCart,
-    Birr,
-    Detail,
-    Image,
-    Name,
-    OldPrice,
-    Price,
-    PriceContainer,
-    Rate,
-    RateAndReview,
-    Review,
+    Sidebar,
+    BasketHeader,
+    ItemsDetails,
+    Action,
+    ItemPrice,
+    Quantity,
+    Arrow,
 } from '.'
 import { selectItems } from '../../features/basketSlice'
+import BasketCart from '../basketCart/BasketCart'
 
 
 const Basket = () => {
@@ -28,35 +23,41 @@ const Basket = () => {
 
     return (
         <BasketContainer>
-            <ArrowBack fontSize="medium" onClick={()=>history.push('/')} />
+            <Arrow>
+                <ArrowBack fontSize="medium" onClick={() => history.push('/')} />
+            </Arrow>
             {Items.length === 0 ? (
-                <h1>Your basket is empty</h1>
+                <h1>Your basket is empty 😒 </h1>
             ) : (
-                <BasketWrapper>
-                    <Image />
-                    <CartInfo>
-                        <Name>name</Name>
-                        <Brand>brand</Brand>
-                        <RateAndReview>
-                            <StarTwoTone fontSize="small" />
-                            <StarTwoTone fontSize="small" />
-                            <StarTwoTone fontSize="small" />
-                            <StarTwoTone fontSize="small" />
-                            <StarTwoTone fontSize="small" />
-                            <Rate>rate</Rate>
-                            <Review>reviews </Review>
-                        </RateAndReview>
-                        <PriceContainer>
-                            <Price>price<Birr>ብር</Birr></Price>
-                            <OldPrice>oldPrice<small>ብር</small></OldPrice>
-                        </PriceContainer>
-                        <Detail>detail</Detail>
-                        </CartInfo>
-                        <AddToCart>Remove to Basket</AddToCart>
-                </BasketWrapper>
+                <>
+                    <BasketWrapper>
+                        <BasketHeader>
+                            <ItemsDetails>Items Detail</ItemsDetails>
+                            <Quantity>Quantity</Quantity>
+                            <ItemPrice>Items Price</ItemPrice>
+                            <Action>Action</Action>
+                        </BasketHeader>
+                            {
+                                Items.map((item) => (
+                                    <BasketCart
+                                        id={item.id}
+                                        name={item.name}
+                                        imageUrl={item.imageUrl}
+                                        rate={item.rate}
+                                        reviews={item.reviews}
+                                        price={item.price}
+                                    />
+                                ))
+                            }
+                    </BasketWrapper>
+                    <Sidebar>
+                        <h5>sidebar</h5>    
+                    </Sidebar>
+                </>
             )}
         </BasketContainer>
     )
 }
 
 export default Basket
+

@@ -3,136 +3,100 @@ import styled from 'styled-components';
 const Flexy = `{
     display: flex;
     align-items: center;
+}`;
+
+const Line = `{
+    border-right-style: solid;
+    border-right-color: gray;
+    border-right-width: .02rem;
 }`
 
 export const BasketContainer = styled.div`
     width: 100%;
     height: 100%;
     display:flex;
-    display:flex;
-    flex-direction: column;
-    padding:.5rem 0 1.5rem 1rem;
+    padding:2rem 0.5rem 0rem .5rem;
     background-color: #ECEBEF;
-    overflow-y: scroll;
     position: relative;
-    ::-webkit-scrollbar{
-        display: none;
-        scroll-behavior: smooth;
-    }
-    .css-i4bv87-MuiSvgIcon-root{
+`;
+
+export const Arrow = styled.div`
         cursor: pointer;
-    }
+        z-index:999;
+        position: absolute;
+        top: .3rem;
+        left:.6rem;
 `;
 
 export const BasketWrapper = styled.div`
+    width: 100%;
     flex:.8;
     display: flex;
-`;
-
-export const Image = styled.img`
-    width:210px;;
-    height:200px;
-    object-fit: contain;
-`;
-
-export const CartInfo = styled.div`
-    display: flex;
     flex-direction: column;
-`;
-
-
-export const Name = styled.h4`
-    margin-top:.2rem;
-    font-weight:bold;
-    letter-spacing: .03rem;
-    user-select: none;
-    color:#303B46;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-`;
-
-export const Brand = styled.h5`
-    font-weight:bold;
-    letter-spacing: .03rem;
-    user-select: none;
-    color:#218394;
-    margin:.2rem 0;
-`;
-export const RateAndReview = styled.div`
-    ${Flexy};
-    /* justify-content:space-between; */
-    .css-ptiqhd-MuiSvgIcon-root {
-        color:gold;
-        font-size:.9rem;
+    background-color:#ECEBEF;
+    margin-right: 1rem;
+    overflow-y: scroll;
+    ::-webkit-scrollbar{
+        display: none;
     }
 `;
 
-export const Rate = styled.small`
-    color:gold;
-    font-size: 12px;
-    font-weight: bold;
-`;
+export const BasketHeader = styled.div`
+    ${Flexy};
+    background-color: whitesmoke;
+    height:35px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    `;
 
-export const Review = styled.small`
-    font-size: 9px;
+export const ItemsDetails = styled.h5`
+    ${Flexy}
+    justify-content: center;
+    flex:.4;
     font-weight: 400;
-    color:gray;
-`;
-
-export const PriceContainer = styled.div`
-    display:flex;
-    position:relative;
-    margin-top: .2rem;
-`;
-
-export const Price = styled.h3`
-    font-weight:400;
-    letter-spacing: .03rem;
-    margin-right:.1rem;
-`;
-export const Birr = styled.small`
-    font-size:15px;
-    font-weight: 400;
-    letter-spacing: .02rem;
-    color:gray;
-    right:.1rem;
-`;
-export const OldPrice = styled.h5`
-    position: absolute;
-    right:.1rem;
-    bottom:0;
-    color:lightgray;
-    font-weight:400;
     letter-spacing: .03rem;
     user-select: none;
+    ${Line};
+    border-left-style: solid;
+    border-left-color: gray;
+    border-left-width: .02rem;
+    height:100%;
     
 `;
-
-export const Detail = styled.p`
-    margin-top: 1rem;
-    font-weight:400;
-    color:gray;
+export const Quantity= styled.h5`
+    ${Flexy}
+    justify-content: center;
+    flex:.2;
+    font-weight: 400;
     letter-spacing: .03rem;
     user-select: none;
-    word-wrap: break-word;
+    ${Line};
+    height:100%;
 `;
-
-export const AddToCart = styled.button`
-    cursor: pointer;
-    ${Flexy};
-    justify-content:center;
-    width:100%;
-    height:40px;
-    margin-top:1.2rem;
-    background-color: #FF9901;
-    color:#F8FAFB;
-    font-weight: bold;
-    border-radius:3px;
-    font-size: 1.1rem;
+export const ItemPrice = styled.h5`
+    ${Flexy}
+    justify-content: center;
+    flex:.2;
+    font-weight: 400;
+    letter-spacing: .03rem;
+    user-select: none;
+    ${Line};
+    height:100%;
 `;
-
+export const Action = styled.h5`
+    ${Flexy}
+    justify-content: center;
+    flex:.2;
+    font-weight: 400;
+    letter-spacing: .03rem;
+    user-select: none;
+    ${Line};
+    height:100%;
+`;
 export const Sidebar = styled.div`
     flex:.2;
     background-color: #fff;
+    height: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
