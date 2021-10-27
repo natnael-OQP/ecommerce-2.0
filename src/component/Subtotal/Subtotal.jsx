@@ -1,10 +1,11 @@
 import React from 'react'
+import { SubTotalContainer } from '.'
 
 const Subtotal = () => {
     return (
-        <div>
-            
-        </div>
+        <SubTotalContainer>
+            hello
+        </SubTotalContainer>
     )
 }
 
