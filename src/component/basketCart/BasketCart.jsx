@@ -1,6 +1,8 @@
-import { Delete, FavoriteBorderTwoTone, StarRate, WatchLater } from '@mui/icons-material'
+import React,{forwardRef, useState } from 'react'
 import { Button } from '@mui/material'
-import React from 'react'
+import { Delete, FavoriteBorderTwoTone, StarRate,  } from '@mui/icons-material'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
     CartInfo,
     Birr,
@@ -19,10 +21,14 @@ import {
     Value,
     ButtonContainer,
     DeleteContainer,
-} from '.'
-const BasketCart = ({id,name,imageUrl,rate,reviews,price}) => {
+} from '.';
+import { removeFromBasket } from '../../features/basketSlice';
+
+const BasketCart = forwardRef(({id,name,imageUrl,rate,reviews,price},ref) => {
+    const dispatch = useDispatch();
+    const [values,setValue] = useState(1);
     return (
-        <ItemsWrapper>
+        <ItemsWrapper ref={ref} >
             <ItemDetail>
                 <Image src={imageUrl} alt={name} />
                 <CartInfo>
@@ -41,22 +47,27 @@ const BasketCart = ({id,name,imageUrl,rate,reviews,price}) => {
             </ItemDetail>
             <QuantityController>
                 <ButtonContainer>
-                    <Button>-</Button>
-                    <Value>3</Value>
-                    <Button>+</Button>
+                    <Button onClick={() => {
+                        values <= 1 ? (dispatch(removeFromBasket({id}))
+                        ) : (
+                                setValue(values-1)
+                            )
+                    }} >-</Button>
+                    <Value>{values}</Value>
+                    <Button onClick={()=>setValue(values+1)}>+</Button>
                 </ButtonContainer>
             </QuantityController>
             <PriceController>
-                <PiceValue>450000<Birr>ብር</Birr></PiceValue>
+                <PiceValue>{values*price}<Birr>ብር</Birr></PiceValue>
             </PriceController>
             <ActionController>
                 <DeleteContainer>
-                    <Delete />
+                    <Delete onClick={()=>dispatch(removeFromBasket({id}))} />
                 </DeleteContainer>
                 <FavoriteBorderTwoTone/>
             </ActionController>
         </ItemsWrapper>
     )
-}
+})
 
 export default BasketCart
