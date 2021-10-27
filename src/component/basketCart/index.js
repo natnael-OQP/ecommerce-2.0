@@ -136,7 +136,7 @@ word-wrap: break-word;
 `;
 
 export const Value = styled.button`
-    cursor: help;
+    cursor: cell;
     ${Flexy};
     justify-content:center;
     width:36px;
@@ -147,6 +147,7 @@ export const Value = styled.button`
     font-size: 1rem;
     border-right: 1px solid gray;
     border-left: 1px solid gray;
+    user-select: none;
 `;
 
 export const PiceValue = styled.h3`
