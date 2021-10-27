@@ -1,11 +1,10 @@
-import { ArrowBack, StarTwoTone } from '@mui/icons-material'
+import { ArrowBack, } from '@mui/icons-material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import {
     BasketContainer,
     BasketWrapper,
-    Sidebar,
     BasketHeader,
     ItemsDetails,
     Action,
@@ -15,6 +14,8 @@ import {
 } from '.'
 import { selectItems } from '../../features/basketSlice'
 import BasketCart from '../basketCart/BasketCart'
+import Subtotal from '../Subtotal/Subtotal'
+import FlipMove from 'react-flip-move';
 
 
 const Basket = () => {
@@ -37,9 +38,11 @@ const Basket = () => {
                             <ItemPrice>Items Price</ItemPrice>
                             <Action>Action</Action>
                         </BasketHeader>
+                        <FlipMove>
                             {
                                 Items.map((item) => (
                                     <BasketCart
+                                        key={item.id}
                                         id={item.id}
                                         name={item.name}
                                         imageUrl={item.imageUrl}
@@ -49,10 +52,9 @@ const Basket = () => {
                                     />
                                 ))
                             }
+                        </FlipMove>
                     </BasketWrapper>
-                    <Sidebar>
-                        <h5>sidebar</h5>    
-                    </Sidebar>
+                    <Subtotal/>
                 </>
             )}
         </BasketContainer>
