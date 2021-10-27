@@ -21,10 +21,10 @@ const MainBody = () => {
     return (
         <MainWrapper>
             <BannerSwipe/>
-            <CategoryPreview title="Popular Category" TitleIcon={LocalFireDepartmentRounded} IsIcon />
+            <CategoryPreview key={99} title="Popular Category" TitleIcon={LocalFireDepartmentRounded} IsIcon />
             {
                 Shop_Data.map(({id,title,path,TitleIcon,items}) => (
-                    <CategoryPreview key={id} title={title} TitleIcon={TitleIcon} items={items} path={path}   />
+                    <CategoryPreview key={id} id={id} title={title} TitleIcon={TitleIcon} items={items} path={path}   />
                 ))
             }
         </MainWrapper>

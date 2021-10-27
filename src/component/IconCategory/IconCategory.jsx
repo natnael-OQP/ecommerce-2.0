@@ -26,7 +26,7 @@ const IconCategory = ({ path, id, Icon }) => {
         <IconContainer>
             {
                 Icons_Data.map(({ path, id, Icon }) => (
-                    <IconsWrapper id={id} to={path} >
+                    <IconsWrapper key={id} id={id} to={path} >
                         <Icon />
                     </IconsWrapper>
                 ))
