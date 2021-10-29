@@ -1,38 +1,19 @@
 import React,{forwardRef, useState } from 'react'
 import { Button } from '@mui/material'
 import { Delete, FavoriteBorderTwoTone, StarRate,  } from '@mui/icons-material'
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import {
-    CartInfo,
-    Birr,
-    Image,
-    Name,
-    Price,
-    Rate,
-    RateAndReview,
-    Review,
-    ItemsWrapper,
-    ItemDetail,
-    QuantityController,
-    PriceController,
-    ActionController,
-    PiceValue,
-    Value,
-    ButtonContainer,
-    DeleteContainer,
-} from '.';
-import { removeFromBasket } from '../../features/basketSlice';
+import { CartInfo, Birr, Image, Name, Price, Rate, RateAndReview, Review, ItemsWrapper, ItemDetail, QuantityController, PriceController, ActionController, PiceValue, Value, ButtonContainer, DeleteContainer, Sold,} from '.';
+import { addToBasket, removeFromBasket, } from '../../features/basketSlice';
 
-const BasketCart = forwardRef(({id,name,imageUrl,rate,reviews,price},ref) => {
+const BasketCart = forwardRef(({id,name,imageUrl,rate,reviews,price,quantity},ref) => {
     const dispatch = useDispatch();
-    const [values,setValue] = useState(1);
     return (
         <ItemsWrapper ref={ref} >
             <ItemDetail>
                 <Image src={imageUrl} alt={name} />
                 <CartInfo>
                     <Name>{name} </Name>
+                    
                     <RateAndReview>
                         <StarRate fontSize="small" />
                         <StarRate fontSize="small" />
@@ -42,23 +23,20 @@ const BasketCart = forwardRef(({id,name,imageUrl,rate,reviews,price},ref) => {
                         <Rate>{rate}</Rate>
                         <Review>{reviews}</Review>
                     </RateAndReview>
-                    <Price>{price}<Birr>ብር</Birr></Price>
+                    <Price>Sold by <Sold>E-suke</Sold></Price>
                 </CartInfo>
             </ItemDetail>
             <QuantityController>
                 <ButtonContainer>
-                    <Button onClick={() => {
-                        values <= 1 ? (dispatch(removeFromBasket({id}))
-                        ) : (
-                                setValue(values-1)
-                            )
-                    }} >-</Button>
-                    <Value>{values}</Value>
-                    <Button onClick={()=>setValue(values+1)}>+</Button>
+                    <Button onClick={
+                        () => dispatch(removeFromBasket({ id }))
+                    }>-</Button>
+                    <Value>{quantity}</Value>
+                    <Button onClick={()=>dispatch(addToBasket({id,name,imageUrl,rate,reviews,price,quantity}))}>+</Button>
                 </ButtonContainer>
             </QuantityController>
             <PriceController>
-                <PiceValue>{values*price}<Birr>ብር</Birr></PiceValue>
+                <PiceValue>{price}<Birr>ብር</Birr></PiceValue>
             </PriceController>
             <ActionController>
                 <DeleteContainer>
