@@ -5,7 +5,7 @@ import { useHistory } from 'react-router'
 import { Birr, Brand, CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Name, OldPrice, Price,PriceContainer,Rate,RateAndReview, Review } from '.'
 import { cartInfo } from '../../features/cartSlice';
 
-const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail }) => {
+const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail,quantity }) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -20,6 +20,7 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
             price,
             oldPrice,
             detail,
+            quantity,
         }))
         history.push('/detail');
     }
