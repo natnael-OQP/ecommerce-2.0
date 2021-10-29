@@ -1,5 +1,5 @@
 import { ArrowBack, } from '@mui/icons-material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import {
@@ -19,9 +19,22 @@ import FlipMove from 'react-flip-move';
 
 
 const Basket = () => {
+    const [items, setItems] = useState([]);
     const history = useHistory();
     const Items = useSelector(selectItems)
-
+    useEffect(() => {
+        setItems(
+            Items.map((item) => ({
+                id:item.id,
+                name:item.name,
+                imageUrl:item.imageUrl,
+                rate:item.rate,
+                reviews:item.reviews,
+                price: item.price,
+                quantity:item.quantity,
+            }))
+        )
+    },[Items])
     return (
         <BasketContainer>
             <Arrow>
@@ -40,15 +53,16 @@ const Basket = () => {
                         </BasketHeader>
                         <FlipMove>
                             {
-                                Items.map((item) => (
+                                items.map((item) => (
                                     <BasketCart
-                                        key={item.id}
-                                        id={item.id}
-                                        name={item.name}
-                                        imageUrl={item.imageUrl}
-                                        rate={item.rate}
-                                        reviews={item.reviews}
-                                        price={item.price}
+                                        key={item?.id}
+                                        id={item?.id}
+                                        name={item?.name}
+                                        imageUrl={item?.imageUrl}
+                                        rate={item?.rate}
+                                        reviews={item?.reviews}
+                                        price={item?.price}
+                                        quantity={item?.quantity}
                                     />
                                 ))
                             }
