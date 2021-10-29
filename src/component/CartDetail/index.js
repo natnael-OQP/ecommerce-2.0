@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Slider from '@mui/material/Slider'
 
 const Flexy = `{
     display: flex;

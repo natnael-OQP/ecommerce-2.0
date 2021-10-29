@@ -104,8 +104,9 @@ export const Rate = styled.small`
 `;
 
 export const Review = styled.small`
-    font-size: 9px;
-    font-weight: 400;
+    margin-left:.2rem;
+    font-size: 10px;
+    font-weight: 600;
     color:gray;
 `;
 
@@ -118,11 +119,22 @@ export const Price = styled.h5`
 `;
 
 export const Birr = styled.small`
-font-size:13px;
-font-weight: 400;
-letter-spacing: .02rem;
-color:lightgray;
-right:.1rem;
+    font-size:13px;
+    font-weight: 400;
+    letter-spacing: .02rem;
+    color:4888F4;
+    right:.1rem;
+    font-family:'Poppins' sans-serif;
+    color:lightgray;
+`;
+export const Sold = styled.small`
+    font-size:13px;
+    font-weight: 400;
+    letter-spacing: .02rem;
+    color:4888F4;
+    right:.1rem;
+    font-family:'Poppins' sans-serif;
+    color:#4888F4;
 `;
 
 

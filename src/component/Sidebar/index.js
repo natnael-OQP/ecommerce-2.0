@@ -16,7 +16,7 @@ export const Row = styled.div`
     flex-direction: column;
     cursor: pointer;
     transform:transition all 0.4 ease-in-out;
-    display:${({isClick})=>isClick ? "block" : "none" };
+    display:${({ifclick})=> (ifclick ? "block" : "none" )};
 `;
 export const Category = styled.h5`
     margin-left: .1rem;

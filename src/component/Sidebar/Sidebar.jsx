@@ -33,12 +33,12 @@ const Sidebar = () => {
     return (
         <SidebarWrapper>
             <SidebarRows
-                isClick={CategoryClick}
+                ifclick={CategoryClick}
                 toggle={toggle}
                 Icon={SettingsApplications}
                 title="category"
             />
-            <Row isClick={CategoryClick} >
+            <Row ifclick={CategoryClick} >
                 {
                     Shop_Data.map(({Path,id,title}) => (
                         <Category key={id} >{title}</Category>
@@ -46,13 +46,13 @@ const Sidebar = () => {
                 }
             </Row>
             <SidebarRows
-                isClick={SellClick}
+                ifclick={SellClick}
                 toggle={SellToggle}
                 Icon={QuestionAnswer}
                 title="Sell on E-Suke "
             />
             <SidebarRows
-                isClick={HelpClick}
+                ifclick={HelpClick}
                 toggle={HelpToggle}
                 Icon={Help}
                 title="help"
