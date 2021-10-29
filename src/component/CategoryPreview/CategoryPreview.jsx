@@ -3,7 +3,6 @@ import {
     CategoryWrapper,
     Title,
     Flex,
-    IconSpan,
 } from '.';
 import Cart from '../Cart/Cart';
 import IconCategory from '../IconCategory/IconCategory';
@@ -21,8 +20,8 @@ const CategoryPreview = ({title,path,TitleIcon,items,IsIcon}) => {
                     IsIcon ? (
                         <IconCategory/>
                     ) : (
-                            items.map((item) => (
-                                <Cart path={path} {...item} />
+                            items.map((item,i) => (
+                                <Cart key={i} path={path} {...item} />
                             ))
                         )
                 }
