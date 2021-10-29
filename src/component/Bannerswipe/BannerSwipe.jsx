@@ -33,6 +33,7 @@ const BannerSwipe = () => {
                 stopOnHover={true}
                 swipeable={true}
                 dynamicHeight={true}
+                showThumbs={false}
                 emulateTouch={true}
                 autoFocus={true}
                 selectedItem_Values={0}
