@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 import { Delete, FavoriteBorderTwoTone, StarRate,  } from '@mui/icons-material'
 import { useDispatch } from 'react-redux';
 import { CartInfo, Birr, Image, Name, Price, Rate, RateAndReview, Review, ItemsWrapper, ItemDetail, QuantityController, PriceController, ActionController, PiceValue, Value, ButtonContainer, DeleteContainer, Sold,} from '.';
-import { addToBasket, removeFromBasket, } from '../../features/basketSlice';
+import { addToBasket, Delate, removeFromBasket, } from '../../features/basketSlice';
 
 const BasketCart = forwardRef(({id,name,imageUrl,rate,reviews,price,quantity},ref) => {
     const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const BasketCart = forwardRef(({id,name,imageUrl,rate,reviews,price,quantity},re
             </PriceController>
             <ActionController>
                 <DeleteContainer>
-                    <Delete onClick={()=>dispatch(removeFromBasket({id}))} />
+                    <Delete onClick={()=>dispatch(Delate({id}))} />
                 </DeleteContainer>
                 <FavoriteBorderTwoTone/>
             </ActionController>
