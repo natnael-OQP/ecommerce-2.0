@@ -1,17 +1,22 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Info, Number,CheckOutBtn, SubTotalContainer, Rows, PiceValue, Info1, Info3, Info3Container, } from '.'
+import { selectTotal, selectTotalQuantity } from '../../features/basketSlice'
 import { Birr} from '../basketCart'
 
 const Subtotal = () => {
+    const total = useSelector(selectTotal);
+    const items = useSelector(selectTotalQuantity);
+
     return (
         <SubTotalContainer>
             <Rows>
                 <Info>Order Summary</Info>
-                <Number>1 items</Number>
+                <Number>{items}</Number>
             </Rows>
             <Rows>
                 <Info1>Subtotal :</Info1>
-                <PiceValue>2000<Birr>ብር</Birr></PiceValue>
+                <PiceValue>{total}<Birr>ብር</Birr></PiceValue>
             </Rows>
             <Rows>
                 <Info1>Delivery Charges :</Info1>
@@ -23,7 +28,7 @@ const Subtotal = () => {
             </Rows>
             <Rows>
                 <Info>Total</Info>
-                <PiceValue>2000<Birr>ብር</Birr></PiceValue>
+                <PiceValue>{total}<Birr>ብር</Birr></PiceValue>
             </Rows>
             <CheckOutBtn>Continue to Checkout</CheckOutBtn>
         </SubTotalContainer>
