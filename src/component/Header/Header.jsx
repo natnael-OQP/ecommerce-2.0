@@ -2,7 +2,7 @@ import React from 'react'
 import {  FavoriteOutlined, KeyboardArrowDownSharp,  NotificationsNoneOutlined, Search, ShoppingCart, } from '@mui/icons-material';
 
 import { Avatar, IconButton } from '@mui/material'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
 import {
     AddCartCounter,
@@ -11,18 +11,25 @@ import {
     HeaderContainer, HederIconsContainer, Input, Logo, SearchContainer, SearchIconContainer,
 } from '.'
 
-import { selectItems } from '../../features/basketSlice'
+import { selectItems } from '../../features/basketSlice';
+import {search} from '../../features/searchSlice'
 import logo from '../../images/logo-white.png';
 
 const Header = () => {
     const history = useHistory();
-    const basket = useSelector(selectItems)
+    const basket = useSelector(selectItems);
+    const dispatch = useDispatch();
+
+    const handelSearch = (e) => {
+        e.preventDefault();
+        dispatch(search(e.target.value));
+    }
     return (
         <HeaderContainer>
             <Logo src={logo} alt="logo" onClick={()=>history.push('/')} />
             {/* Search-Container--> */}
             <SearchContainer>
-                <Input type="search" placeholder="Search..." />
+                <Input type="search" placeholder="Search..." onChange={handelSearch} />
                 <CategoryButton>All Category <KeyboardArrowDownSharp fontSize="small" /> </CategoryButton>
                 <SearchIconContainer>
                     <Search />
