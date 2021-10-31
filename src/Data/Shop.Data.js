@@ -6,7 +6,7 @@ const Shop_Data = [
       id: 1,
       title: 'Recommended',
       Path: 'recommended',
-      TitleIcon:Computer,
+      TitleIcon: Computer,
       items: [
         {
           id: 1,
