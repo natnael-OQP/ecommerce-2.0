@@ -30,7 +30,7 @@ const Subtotal = () => {
                 <Info>Total</Info>
                 <PiceValue>{total}<Birr>ብር</Birr></PiceValue>
             </Rows>
-            <CheckOutBtn>Continue to Checkout</CheckOutBtn>
+            <CheckOutBtn role="link" >Continue to Checkout</CheckOutBtn>
         </SubTotalContainer>
     )
 }
