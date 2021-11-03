@@ -6,6 +6,7 @@ import { AddToCart, Birr, Brand, CartWrapper, Detail, Image, ImageContainer, Inf
 import { selectCart } from '../../features/cartSlice';
 import { addToBasket } from '../../features/basketSlice';
 import { useHistory } from 'react-router';
+import Reviews from '../reviews/Reviews';
 
 const CartDetail = () => {
     const dispatch = useDispatch();
@@ -30,33 +31,37 @@ const CartDetail = () => {
         <CartWrapper>
             <ArrowBack fontSize="medium" onClick={()=>history.push('/')} />
             {cart === null ? <h1>empty 😒 </h1> : (
-                <Wrapper>
-                    <ImageContainer>
-                        <Image src={cart?.imageUrl} alt={cart?.name} />
-                    </ImageContainer>
-                    <InfoContainer>
-                        <Name>{cart?.name}</Name>
-                        <Brand>{cart?.brand}</Brand>
-                        <RateAndReview>
-                            <StarRate fontSize="small" />
-                            <StarRate fontSize="small" />
-                            <StarRate fontSize="small" />
-                            <StarRate fontSize="small" />
-                            <StarRate fontSize="small" />
-                            <Rate>{cart?.rate}</Rate>
-                            <Review>{cart?.reviews} </Review>
-                        </RateAndReview>
-                        <PriceContainer>
-                            <Price>{cart?.price}<Birr>ብር</Birr></Price>
-                            <OldPrice>{cart?.oldPrice}<small>ብር</small></OldPrice>
-                        </PriceContainer>
-                        <Detail>{cart?.detail}</Detail>
-                        <AddToCart
-                        onClick={addToBasketClick}
-                        >add to Cart </AddToCart>
-                    </InfoContainer>
-                </Wrapper>
+                <>
+                    <Wrapper>
+                        <ImageContainer>
+                            <Image src={cart?.imageUrl} alt={cart?.name} />
+                        </ImageContainer>
+                        <InfoContainer>
+                            <Name>{cart?.name}</Name>
+                            <Brand>{cart?.brand}</Brand>
+                            <RateAndReview>
+                                <StarRate fontSize="small" />
+                                <StarRate fontSize="small" />
+                                <StarRate fontSize="small" />
+                                <StarRate fontSize="small" />
+                                <StarRate fontSize="small" />
+                                <Rate>{cart?.rate}</Rate>
+                                <Review>{cart?.reviews} </Review>
+                            </RateAndReview>
+                            <PriceContainer>
+                                <Price>{cart?.price}<Birr>ብር</Birr></Price>
+                                <OldPrice>{cart?.oldPrice}<small>ብር</small></OldPrice>
+                            </PriceContainer>
+                            <Detail>{cart?.detail}</Detail>
+                            <AddToCart
+                            onClick={addToBasketClick}
+                            >add to Cart </AddToCart>
+                        </InfoContainer>
+                    </Wrapper>
+                    <Reviews/>
+                </>
             )}
+
         </CartWrapper>
     )
 }
