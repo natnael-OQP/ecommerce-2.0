@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {StarRate, } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
 import { Birr, Brand, CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Name, OldPrice, Price,PriceContainer,Rate,RateAndReview, Review } from '.'
 import { cartInfo } from '../../features/cartSlice';
+import { db } from '../../Database/firebase';
 
 const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail,quantity }) => {
+    const [reviewsID, setReviewsID] = useState('');
+    useEffect(() => {
+        db.collection('reviews').onSnapshot((snapshot) => (
+            setReviewsID(snapshot.docs.map(doc => doc.data()))
+        ))
+    }, []);
     const history = useHistory();
     const dispatch = useDispatch();
-
     const handleClick = () => {
         dispatch(cartInfo({
             id,
@@ -21,9 +27,15 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
             oldPrice,
             detail,
             quantity,
-        }))
+            reviewsID,
+        }));
         history.push('/detail');
+
+        db.collection('reviews').add({
+            ItemName:name+id,
+        })
     }
+    
     return (
         <CartContainer>
             <CartWrapper onClick={handleClick} >
