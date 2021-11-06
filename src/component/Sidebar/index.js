@@ -10,6 +10,7 @@ export const SidebarWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     position:relative;
+    height: 100%;
 `;
 
 export const Row = styled.div`
@@ -35,12 +36,18 @@ export const Category = styled.h5`
 `;
 
 export const Login = styled.button`
+    width:90px;
+    cursor: pointer;
     position: absolute;
-    left:1rem;
-    bottom: 2rem;
-    font-weight:400;
+    left:2rem;
+    top:80%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    font-weight:600;
     letter-spacing: .03rem;
     user-select: none;
+    background-color: transparent;
     color: #ECEBEF;
     transition: all 0.4 ease-in-out;
     &:hover{
