@@ -12,14 +12,15 @@ import {
 } from '.'
 
 import { selectItems } from '../../features/basketSlice';
-import {search} from '../../features/searchSlice'
+import { search } from '../../features/searchSlice';
 import logo from '../../images/logo-white.png';
+import { selectUser } from '../../features/userSlice';
 
 const Header = () => {
     const history = useHistory();
     const basket = useSelector(selectItems);
     const dispatch = useDispatch();
-
+    const user = useSelector(selectUser);
     const handelSearch = (e) => {
         e.preventDefault();
         dispatch(search(e.target.value));
@@ -48,7 +49,7 @@ const Header = () => {
                     <NotificationsNoneOutlined />
                 </IconButton>
                 <IconButton>
-                    <Avatar />
+                    <Avatar src={user?.photo} alt={user?.name} />
                 </IconButton>
             </HederIconsContainer>
         </HeaderContainer>
