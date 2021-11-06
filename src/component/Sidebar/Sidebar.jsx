@@ -1,4 +1,4 @@
-import { Help, QuestionAnswer, SettingsApplications } from '@mui/icons-material';
+import {  Help, LoginRounded, Logout, QuestionAnswer, SettingsApplications } from '@mui/icons-material';
 import React, { useState } from 'react'
 import {
     Category,
@@ -6,18 +6,19 @@ import {
     Row,
     SidebarWrapper, 
 } from '.';
+
 import Shop_Data from '../../Data/Shop.Data';
 import SidebarRows from '../Sidebar_Rows/SidebarRows';
 import {auth, provider} from '../../Database/firebase'
-import { useDispatch } from 'react-redux';
-import { signIn, signOut } from '../../features/useSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser, signIn, signOut } from '../../features/userSlice';
+
 const Sidebar = () => {
-    const user = null;
+    const user = useSelector(selectUser);
     const dispatch = useDispatch();
     const [CategoryClick, setClick] = useState(false);
     const [SellClick, setSell] = useState(false);
-    const [HelpClick, SetHelp] = useState(false);
-    
+    const [HelpClick, SetHelp] = useState(false);    
     const toggle = () => {
         setClick(!CategoryClick);
         setSell(false);
@@ -34,17 +35,17 @@ const Sidebar = () => {
         setClick(false);
         SetHelp(!HelpClick);
     }
-
+    // sign-in-with-google
     const SignIn = () => {
         auth.signInWithPopup(provider).then(({user}) => {
             dispatch(signIn({
-                photo: user.photoURL,
                 email: user.email,
                 name: user.displayName,
-            })).catch((error) => alert(error))
-        })
+                photo: user.photoURL,
+            }))
+        }).catch((error) => alert(error))
     }
-
+    // sign-out
     const SignOut = () => {
         auth.signOut();
         dispatch(signOut());
@@ -78,10 +79,10 @@ const Sidebar = () => {
                 title="help"
             />
             {
-                null ? (
-                    <Login onClick={SignIn} >Log In</Login>
+                !user ? (
+                    <Login onClick={SignIn} ><LoginRounded fontSize="small" />  Log In</Login>
                 ): (
-                    <Login onClick={SignOut} >Log Out</Login>
+                    <Login onClick={SignOut} > <Logout fontSize="small" /> {"  "} Log Out</Login>
                 )
             }
 
