@@ -5,13 +5,11 @@ import {
     ReviewsContent
 } from '.'
 
-const Chat = ({photo,review}) => {
+const Chat = ({id,data:{message,name,photo,timeStamp,}}) => {
     return (
         <ChatContainer>
-            <Avatar />
-            <ReviewsContent>
-                rich sfhudfh uwfeyg eyrgf
-            </ReviewsContent>
+            <Avatar src={photo} />
+            <ReviewsContent>{message}</ReviewsContent>
         </ChatContainer>
     )
 }
