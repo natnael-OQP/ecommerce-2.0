@@ -7,7 +7,7 @@ import { cartInfo } from '../../features/cartSlice';
 import { db } from '../../Database/firebase';
 
 const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail,quantity }) => {
-    const [reviewsID, setReviewsID] = useState('');
+    const [reviewsID, setReviewsID] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
     //----
@@ -15,7 +15,7 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
         db.collection('reviews').onSnapshot((snapshot) => (
             setReviewsID(
                 snapshot.docs.map((doc) => ({
-                    data: doc.Data()
+                    data: doc.data()
                 }))
             )
         ))
@@ -36,14 +36,13 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
         }));
         history.push('/detail');
         // if data is exist
-        const isNotExist = reviewsID.find(({data:{Item}})=>Item !== id)
-        if (isNotExist) {
+        const isExist = reviewsID.find(({data:{Item}})=>Item === id)
+        if (!isExist) {
             db.collection('reviews').add({
                 Item:id,
             })
         }
     }//-X-
-    console.log(reviewsID);
     return (
         <CartContainer>
             <CartWrapper onClick={handleClick} >
