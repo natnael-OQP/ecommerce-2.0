@@ -19,7 +19,7 @@ export const Header = styled.div`
     align-items: center;
     justify-content:space-between;
     padding:.2rem 0 .1rem .5rem;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid lightgray;
 `;
 
 export const H4 = styled.h5`
