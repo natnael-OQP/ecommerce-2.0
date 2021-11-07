@@ -9,8 +9,8 @@ import IconCategory from '../IconCategory/IconCategory';
 
 
 const CategoryPreview = ({ title, path, TitleIcon, items, IsIcon }) => {
-
-
+    
+    
     return (
         <CategoryWrapper>
             <Flex>
