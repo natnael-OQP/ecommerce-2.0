@@ -2,21 +2,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ==> I am Natnael-Abebe(natnael-OQP) to build this app I use The about 
 
-                                                                  =>[npx create-react-app my-app --template redux] 
+                                                =>[npx create-react-app my-app --template redux] 
                                                                   
-                                                                  =>[react-router] 
+                                                =>[react-router] 
                                                                   
-                                                                  =>[firebase] 
+                                                =>[firebase] 
                                                                   
-                                                                  =>[styled-components] 
+                                                =>[styled-components] 
                                                                   
-                                                                  =>[react-responsive-carousel] 
+                                                =>[react-responsive-carousel] 
                                                                   
-                                                                  =>[react-flip-move] 
+                                                =>[react-flip-move] 
                                                                   
-                                                                  =>[material (mui)]
+                                                =>[material (mui)]
 
 
 
 
-==========================================NATNAEL-OQP======================================
+=======================NATNAEL-OQP======================
