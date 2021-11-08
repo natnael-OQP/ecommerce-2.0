@@ -5,6 +5,8 @@ import { auth, provider } from '../../Database/firebase'
 import { selectTotal, selectTotalQuantity } from '../../features/basketSlice'
 import { selectUser, signIn } from '../../features/userSlice'
 import { Birr} from '../basketCart'
+// import { loadStripe } from '@stripe/stripe-js';
+// const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
 const Subtotal = () => {
     const total = useSelector(selectTotal);
@@ -20,6 +22,8 @@ const Subtotal = () => {
             }))
         }).catch((error) => alert(error))
     }
+    // const createCheckoutSessions = () => {
+    // }
     return (
         <SubTotalContainer>
             <Rows>
