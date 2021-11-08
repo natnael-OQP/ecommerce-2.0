@@ -67,7 +67,7 @@ export const Btn = styled.button`
     }
 `;
 
-export const Message = styled.input`
+export const Message = styled.textarea`
     width:350px;
     height:110px;
     padding:.5rem;
