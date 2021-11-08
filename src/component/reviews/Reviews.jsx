@@ -1,7 +1,7 @@
 import { RateReview } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import React ,{useEffect, useState} from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     ReviewsContainer,
     Form,
@@ -12,71 +12,94 @@ import {
     H4,
 } from '.';
 
-import { selectCart, selectID } from '../../features/cartSlice';
+import {selectID } from '../../features/cartSlice';
 import Chat from '../chat/Chat';
-import {db} from '../../Database/firebase'
+import {auth, db, provider} from '../../Database/firebase'
 import firebase from 'firebase/compat/app';
-import { selectUser } from '../../features/userSlice';
+import { selectUser, signIn } from '../../features/userSlice';
+import FlipMove from 'react-flip-move';
 
 const Reviews = () => {
     const [open,setOpen] = useState(false);
-    const [input, setInput] = useState('');
+    const [inputs, setInputs] = useState('');
     const [messages, setMessages] = useState([]);
     const ID = useSelector(selectID);
     const user = useSelector(selectUser);
+    const dispatch = useDispatch();
     useEffect(() => {
         if (ID) {
             db.collection('reviews')
                 .doc(ID)
                 .collection('messages')
-                .orderBy('timeStamp', 'desc')
-                .onSnapshot((snapshot) => (
+                .orderBy('timestamp', 'desc')
+                .onSnapshot(snapshot => (
                     setMessages(
                         snapshot.docs.map((doc) => ({
+                            id: doc.id,
                             data: doc.data(),
                         }))
-                    )
-                ))
+                    )))
         }
     }, [ID]);
     // toggle
-    console.log(ID);
     const toggle = () => {
         setOpen(!open);
     }
     // send Message
-    const sendReview = (e) => {
+    const sentMessage = (e) => {
         e.preventDefault();
-        db.collection('reviews').doc(ID).collection('messages').add({
-            message: input,
-            timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-            name: user.name,
-            photo: user.photo,
+        db.collection("reviews").doc(ID).collection("messages").add({
+            messages: inputs,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            displayName: user.name,
             email: user.email,
-            id: user.id,
-        })
-        setInput("")
+            photo: user.photo,
+        });
+        setInputs("");
+        toggle();
     }
-    
+    const SignIn = () => {
+        auth.signInWithPopup(provider).then(({user}) => {
+            dispatch(signIn({
+                email: user.email,
+                name: user.displayName,
+                photo: user.photoURL,
+            }))
+        }).catch((error) => alert(error))
+    }
     return (
         <ReviewsContainer>
             <Header>
                 <H4>Positive Reviews</H4>
-                <Button>
-                    <RateReview onClick={toggle} />
-                </Button>
+                {
+                    !user?(
+                        <Button onClick={SignIn} >
+                            pleas Login 
+                        </Button>
+                    ) : (
+                        <Button>
+                            <RateReview onClick={toggle} />
+                        </Button>
+                        )
+                }
             </Header>
             <Body>
                 <Form open={open} >
-                    <Message value={input} onChange={(e) => setInput(e.target.value) } placeholder="wright your Message..." cols="60" rows="6"  />
-                    <Btn type="submit" onClick={sendReview} >Sent</Btn>
+                    <Message
+                        type="text"
+                        placeholder="write your message..."
+                        value={inputs}
+                        onChange={(e)=>setInputs(e.target.value)}
+                    />
+                    <Btn type="submit" onClick={sentMessage} >Sent</Btn>
                 </Form>
-                {
-                    messages.map(({id,data}) => (
-                        <Chat key={id}  data={data} />
-                    ))
-                }
-                
+                <FlipMove>
+                    {
+                        messages.map(({id,data})=>(
+                            <Chat key={id} content={data} />
+                        ))
+                    }
+                </FlipMove>
             </Body>
         </ReviewsContainer>
 )}
