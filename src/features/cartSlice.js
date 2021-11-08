@@ -10,12 +10,14 @@ export const cartSlice = createSlice({
     reducers: {
         cartInfo: (state, action) => {
             state.cartInfo = action.payload;
+        },
+        setId: (state,action) => {
             state.id = action.payload.id;
         },
     }
 });
 
-export const { cartInfo } = cartSlice.actions;
+export const { cartInfo,setId } = cartSlice.actions;
 
 export const selectCart = (state) => state.cart.cartInfo;
 export const selectID = (state) => state.cart.id;
