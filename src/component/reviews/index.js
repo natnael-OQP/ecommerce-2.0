@@ -37,7 +37,7 @@ export const Form = styled.form`
     padding-bottom: 0 .5rem;
     width: 100%;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,13 +61,15 @@ export const Btn = styled.button`
     border-radius: .2rem .4rem;
     margin-top: auto;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover{
         transform: translateY(-5px);
     }
 `;
 
-export const Message = styled.textarea`
+export const Message = styled.input`
+    width:350px;
+    height:110px;
     padding:.5rem;
     outline: none;
     background-color: #F8FAFB;
