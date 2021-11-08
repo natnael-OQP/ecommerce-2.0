@@ -11,6 +11,9 @@ export const ReviewsContainer = styled.div`
     background-color: whitesmoke;
     position: relative;
     margin-bottom: 1rem;
+    @media (max-width:650px){
+        width: 100%;
+    }
 `;
 
 export const Header = styled.div`

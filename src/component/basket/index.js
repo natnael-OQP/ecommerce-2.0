@@ -18,6 +18,10 @@ export const BasketContainer = styled.div`
     padding:2rem 0.5rem 0rem .5rem;
     background-color: #ECEBEF;
     position: relative;
+    @media (max-width:760px){
+        padding:0;
+        flex-direction: column-reverse;
+    }
 `;
 
 export const Arrow = styled.div`

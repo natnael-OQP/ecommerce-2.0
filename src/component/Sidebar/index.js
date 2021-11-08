@@ -11,6 +11,9 @@ export const SidebarWrapper = styled.div`
     align-items: center;
     position:relative;
     height: 100%;
+    @media(max-width:850px) {
+        display:none;
+    }
 `;
 
 export const Row = styled.div`

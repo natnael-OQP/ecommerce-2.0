@@ -12,6 +12,9 @@ export const HeaderContainer = styled.div`
     .MuiSvgIcon-root{
         color:#fff;
     }
+    @media (max-width:767px){
+        padding:0;
+    }
 `;
 
 export const Logo = styled.img`
@@ -20,6 +23,13 @@ export const Logo = styled.img`
     height:30px;
     object-fit: contain;
     background-color: transparent;
+    @media (min-width:767px){
+        width:80px;
+        height:30px;
+    }
+    @media (max-width:530px){
+        display: none;
+    }
 `;
 
 export const SearchContainer = styled.div`
@@ -30,6 +40,7 @@ export const SearchContainer = styled.div`
     max-width:460px;
     border:1px solid #303B46;
     border-radius: 5px;
+    margin-left: 5px;
 `;
 
 export const Input = styled.input`
@@ -58,6 +69,12 @@ export const CategoryButton = styled.button`
     letter-spacing: .03rem;
     cursor: pointer;
     color:#ECEBEF;
+    @media (max-width:480px){
+        width:20px;
+        span{
+            display:none;
+        }
+    }
 `;
 
 export const SearchIconContainer = styled.button`

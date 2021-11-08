@@ -7,6 +7,12 @@ export const SubTotalContainer = styled.div`
     padding-top:.8rem;
     background-color: #fff;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    @media (max-width:760px){
+        height:250px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 0px;
+        margin-bottom: .4rem;
+        padding:.2rem 3rem;
+    }
 `;
 
 export const Rows = styled.div`
@@ -15,6 +21,9 @@ export const Rows = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width:760px){
+        padding:.3rem 0;
+    }
 `;
 
 export const Info = styled.h5`

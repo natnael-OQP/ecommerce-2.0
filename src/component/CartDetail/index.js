@@ -19,6 +19,9 @@ export const CartWrapper = styled.div`
     .css-i4bv87-MuiSvgIcon-root{
         cursor: pointer;
     }
+    @media (max-width:740px){
+        padding:.2rem;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -28,12 +31,24 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     padding:2rem ;
+    @media (max-width:740px){
+        width:100%;
+        overflow:hidden;
+        padding:.5rem;
+    }
+    @media (max-width:650px){
+        flex-direction: column;
+    }
     /* background-color: #fff; */
 `;
 
 export const ImageContainer = styled.div`
-    width:220px;;
+    width:220px;
     height:230px;
+    @media (max-width:740px){
+        width:220px;
+        height:180px;
+    }
     margin-right:2rem;
     background-color: #fff;
 `;
@@ -42,6 +57,9 @@ export const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @media (max-width:740px){
+        object-fit: contain;
+    }
 `;
 
 export const InfoContainer = styled.div`
@@ -140,4 +158,5 @@ export const AddToCart = styled.button`
     border-radius:3px;
     font-size: 1.1rem;
     text-transform: capitalize;
+    margin-bottom: 2rem;
 `;
