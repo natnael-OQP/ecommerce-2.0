@@ -25,7 +25,7 @@ const CartDetail = () => {
             detail: cart.detail,
             quantity:cart.quantity,
         }))
-        history.push('/basket')
+        history.push('/')
     }
     return (
         <CartWrapper>
