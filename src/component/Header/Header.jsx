@@ -31,7 +31,7 @@ const Header = () => {
             {/* Search-Container--> */}
             <SearchContainer>
                 <Input type="search" placeholder="Search..." onChange={handelSearch} />
-                <CategoryButton>All Category <KeyboardArrowDownSharp fontSize="small" /> </CategoryButton>
+                <CategoryButton> <span>All Category</span><KeyboardArrowDownSharp fontSize="small" /> </CategoryButton>
                 <SearchIconContainer>
                     <Search />
                 </SearchIconContainer>
