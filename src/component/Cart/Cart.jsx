@@ -3,7 +3,7 @@ import {StarRate, } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
 import { Birr, Brand, CartContainer, CartInfo, CartWrapper, Image, ImageContainer, Name, OldPrice, Price,PriceContainer,Rate,RateAndReview, Review } from '.'
-import { cartInfo } from '../../features/cartSlice';
+import { cartInfo, setId } from '../../features/cartSlice';
 import { db } from '../../Database/firebase';
 
 const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detail,quantity }) => {
@@ -15,6 +15,7 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
         db.collection('reviews').onSnapshot((snapshot) => (
             setReviewsID(
                 snapshot.docs.map((doc) => ({
+                    ID:doc.id,
                     data: doc.data()
                 }))
             )
@@ -36,11 +37,13 @@ const Cart = ({ id, imageUrl, name, brand, rate, reviews, price, oldPrice, detai
         }));
         history.push('/detail');
         // if data is exist
-        const isExist = reviewsID.find(({data:{Item}})=>Item === id)
+        const isExist = reviewsID.find(({ ID, data: { Item } }) => Item === id)
         if (!isExist) {
             db.collection('reviews').add({
                 Item:id,
-            })
+            }).then((docs)=> dispatch(setId({id:docs.id})) )
+        } else {
+            dispatch(setId({id:isExist.ID}))
         }
     }//-X-
     return (
