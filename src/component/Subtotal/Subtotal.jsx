@@ -46,7 +46,7 @@ const Subtotal = () => {
                 user ? (
                     <CheckOutBtn role="link" >Continue to Checkout</CheckOutBtn>
                 ): (
-                    <CheckOutBtn onClick={SignIn}  >Sign in to continue </CheckOutBtn>
+                    <CheckOutBtn onClick={SignIn}  >Sign in to checkout </CheckOutBtn>
                 )
             }
         </SubTotalContainer>
