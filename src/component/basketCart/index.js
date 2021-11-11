@@ -32,8 +32,7 @@ export const ButtonContainer = styled.div`
     ${Flexy};
     height:28px;
     margin-top:.85rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4pxMuiSvgIcon-root{
         min-width:40px !important;
         min-height:27px !important;
         padding:0 !important;
@@ -53,7 +52,7 @@ export const ActionController = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    .css-i4bv87-MuiSvgIcon-root{
+    .MuiSvgIcon-root{
         cursor: pointer;
     }
 
@@ -91,7 +90,7 @@ export const RateAndReview = styled.div`
 ${Flexy};
 padding: 0;
 /* justify-content:space-between; */
-.css-ptiqhd-MuiSvgIcon-root {
+.MuiSvgIcon-root {
     color:gold;
     font-size:.9rem;
 }
@@ -172,7 +171,7 @@ export const PiceValue = styled.h3`
 
 export const DeleteContainer = styled.div`
     transition: all .9s ease;
-    .css-i4bv87-MuiSvgIcon-root{
+    .MuiSvgIcon-root{
         color:#DC1623;
         &:hover {
             transform:rotate(20deg);

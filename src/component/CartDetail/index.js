@@ -90,7 +90,7 @@ export const Brand = styled.h5`
 export const RateAndReview = styled.div`
     ${Flexy};
     /* justify-content:space-between; */
-    .css-ptiqhd-MuiSvgIcon-root {
+    .MuiSvgIcon-root {
         color:gold;
         font-size:.9rem;
     }
